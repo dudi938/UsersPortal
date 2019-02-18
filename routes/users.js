@@ -1,10 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path')
+//var app = require('../app')
+var bodyParser = require('body-parser');
+
+//var app = express()
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
 
 const usersBaseUrl = path.join(__dirname, '../views/Users/')
 const homeBaseUrl = path.join(__dirname, '../views/')
-
 
 /* GET create page. */
 router.get('/create', function(req, res, next) {
@@ -14,12 +21,11 @@ router.get('/create', function(req, res, next) {
   res.sendFile(url)
 });
 
-
 /* POST New User. */
-router.post('/create', function(req, res, next) {
+router.post('/create', jsonParser, function(req, res, next) {
   console.log('POST: ' + req.originalUrl)
-  console.log('GET: ' + req.originalUrl)
-  var url = homeBaseUrl + '/index.html'
+  console.log(JSON.stringify(req.body))
+  var url = usersBaseUrl + '/List.html'
   console.log('Send file ' + url)
   res.sendFile(url)
 });

@@ -1,15 +1,18 @@
-function postData(data, url){
-    $.ajax({
+function postUser(data, url){
+    var res = $.ajax({
         url: url,
-        type: 'post',
-        contentType: 'application/json; charset=utf-8',
-        success: function (data) {
-
+        TYPE: 'POST',
+        contentType: 'application/json',
+        success: function (results) {
+            res = results
+            console.log(res)
         },
+        dataType: "json",
         data: JSON.stringify(data)
     }).fail(function(msg, err){
         if(err){
             alert('error:' + JSON.stringify(err))
+            return err
         }
     });
 }
