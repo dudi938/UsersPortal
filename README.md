@@ -1,7 +1,7 @@
 # UsersPortal
 ## Overview
 
-Users Portal is a simple nodejs app, That allow to Create\Show users that stored on a SQL DB.
+Users Portal is a simple nodejs app That allows to Create\Show users that stored on a SQL DB.
 User object consist from these properies:
 1. Full name
 2. Birthday
