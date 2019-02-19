@@ -6,25 +6,25 @@
         <script type="text/javascript" src="../../javascripts/rest_api/rest.js"></script>
     </head>
     <body>
-        <div class="container bg-dark text-white mt-3 p-3">
+        <div class="container-fluid bg-dark text-white mt-3 p-3">
             <form class="createUserForm" action="/users/create" method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="dudi938@gmail.com">
+                    <input type="email" name="Email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="dudi938@gmail.com">
                 </div>
                 <div class="form-group">
                     <label for="Birthday">Birthday</label>
-                    <input type="date" name="Birthday" class="form-control" id="birthday">
+                    <input type="text" name="Birthday" class="form-control" id="birthday"  value="11/15/1988" required>
                 </div>
                 <div class="form-group">
                     <label for="FullName">Full Name</label>
-                    <input type="text"  name="FullName" class="form-control" id="fullName" placeholder="Moshe Cohen">
+                    <input type="text" value="David dsfds" name="FullName" class="form-control" id="fullName" placeholder="Moshe Cohen">
                 </div>
                 <div class="form-group">
                     <label for="Phone">Phone</label>
-                    <input type="tel" name="Phone" class="form-control" id="fullName" placeholder="050-111-1111" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required value="054-215-1661">
+                    <input type="tel" name="Phone" class="form-control" id="phone" placeholder="050-111-1111" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required value="054-215-1661">
                 </div> 
-                <button type="submit" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="submit btn btn-primary">Save</button>
             </form>          
         </div>      
     </body>

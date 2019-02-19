@@ -1,23 +1,23 @@
 $( document ).ready(function() {
-    //bindClickEvents();
+    bindClickEvents();
 });
 
 function bindClickEvents(){
-    // $( ".createUserForm" ).submit(function( event ) {
-    //     event.preventDefault();
-    //     submitUser();
-    // });
+     $( ".submit" ).on('click' ,function( event ) {
+         var fullName = $( "#fullName" ).val()
+         var phone = $( "#phone" ).val()
+         var birthday = $( "#birthday" ).val()
+         var email = $( "#email" ).val()
+         //var user = '{"FullName":"fullName","Birthday":"birthday","Email":"email", "Phone":"phone"}'
+         var user = {"FullName":fullName,"Birthday":birthday,"Email":email, "Phone":phone}
+         saveUser(JSON.stringify(user), function(){
+            window.location.href='list'
+         })
+
+     });
 }
 
 
-function submitUser(){
-    //read values from fields
-
-    //validate the values
-
-    //submit the user
-    postUser({"name": "David", "Phone": "123456789"}, '/users/create')
-
-    //redirect to the list page
-    window.location = '../../../views/Users/List.html'
+function saveUser(user, callback){
+    ajaxPost(user, '/users/create', callback)
 }

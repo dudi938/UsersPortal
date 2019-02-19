@@ -22,20 +22,21 @@ exports.getAllUsers = async function getAllUsers(){
         sql.close()
         return result
 	} catch (err) {
-		console.log('ERROR: ' + err)
+        console.log('ERROR: ' + err)
+        sql.close()
 	}
 }
 
 exports.addUsers = async function addUsers(User){
 	try {
-        console.log('Hello world')
 		await sql.connect('mssql://ofakim:Qaz123456789@DUDI-PC/OfakimDB')
 		const result = await sql.query`INSERT INTO Users(FullName, Birthday, Email, Phone) VALUES(${User.fullName}, ${User.birthday}, ${User.email}, ${User.phone});`
         //console.dir(result)
         sql.close()
         return result
 	} catch (err) {
-		console.log('ERROR: ' + err)
+        console.log('ERROR: ' + err)
+        sql.close()
 	}
 }
 

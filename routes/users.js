@@ -3,6 +3,7 @@ var router = express.Router();
 var path = require('path')
 //var app = require('../app')
 var bodyParser = require('body-parser');
+var sql = require('../data/sql')
 
 //var app = express()
 
@@ -23,20 +24,33 @@ router.get('/create', function(req, res, next) {
 
 /* POST New User. */
 router.post('/create', jsonParser, function(req, res, next) {
-  console.log('POST: ' + req.originalUrl)
-  console.log(JSON.stringify(req.body))
-  var url = usersBaseUrl + '/List.html'
-  console.log('Send file ' + url)
-  res.sendFile(url)
+  var body = JSON.stringify(req.body)
+  console.log('Body: ' + body)
+  console.log('fullName: ' + req.body.FullName)      
+  var users = sql.addUsers({"fullName":req.body.FullName, "birthday":req.body.Birthday, "email":req.body.Email, "phone":req.body.Phone}).then((users)=>{
+   //var url = usersBaseUrl + '/List.html'
+   var url = '/Users/list.html'
+   console.log('Send file ' + url)
+   res.send('OK')
+  })
 });
-
 
 /* GET list page. */
 router.get('/list', function(req, res, next) {
-  console.log('GET: ' + req.originalUrl)
   var url = usersBaseUrl + '/List.html'
-  console.log('Send file ' + url)
-  res.sendFile(url)
+  var users = sql.getAllUsers().then((users)=>{
+    var url = usersBaseUrl + '/List.html'
+    res.sendFile(url)
+  })
+});
+
+
+
+/* GET list page. */
+router.get('/list/get', function(req, res, next) {
+  var users = sql.getAllUsers().then((users)=>{
+    res.send(users)
+  })
 });
 
 module.exports = router;
