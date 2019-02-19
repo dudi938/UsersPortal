@@ -28,6 +28,10 @@ Start SQL server:
 3. Give the user the password "Qaz123456789"
 4. Done
 
+## Start mongodb server()
+1. docker pull mongo
+2. docker run  -p 27017:27017 --name mongodb -it mongo
+
 Open Brouser and navigate to http://localhost:3000
 
 Done!
