@@ -2,7 +2,7 @@ $(document).ready( function () {
     //$('#UsersTB').DataTable();
 
     getUsers((data) =>{
-        console.log('OKOK:' + data.recordset)
+        console.log('OK:' + data.recordset)
         createTable()
         $('#UsersTB').DataTable();
         bindData2Table(data.recordset);
@@ -36,8 +36,6 @@ function addRow2Table(row){
 
 
 function createTable(){
-    //<table id="UsersTB" class="display"><thead><tr><th>Full Name</th><th>Birthday</th><th>Email</th><th>Phone</th></tr></thead><tbody>
     var table = '<table id="UsersTB" class="display"><thead><tr><th>Full Name</th><th>Birthday</th><th>Email</th><th>Phone</th></tr></thead><tbody>'
     $( "body" ).append(table)
-    //$('#UsersTB').DataTable();
 }

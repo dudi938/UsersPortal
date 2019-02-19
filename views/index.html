@@ -2,6 +2,24 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous">
+
+
+        <style>
+            .button {
+            background-color: #007bff; /* Green */
+            border: none;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+            .button {border-radius: 12px;}
+        </style>   
     </head>
 
     <body class="bg-light">
@@ -9,24 +27,18 @@
             <p class="h1 text-center font-weight-light">Users Managment Portal</p>
         </div>
         
-        <div class="container-fluid bg-dark h-25">
+        <div class="container-fluid h-25">
             <div class="row">
                 <div class="container mt-5 ">
-                    <!-- <div class="input-group">
-                        <div class="input-group-prepend btn-group-vertical">
-                            <button class="btn btn-light m-3" type="button">Create User</button>
-                            <button class="btn btn-light m-3" type="button">Users</button>
-                        </div>
-                    </div> -->
                     <div class="container">
                         <div class="row">
                           <div class="col-sm">
-                            <button class="btn btn-light m-3 btn-block" type="button" onclick="window.location.href='/users/create'">Create User</button>
+                            <button class="button" type="button" onclick="window.location.href='/users/create'">Create User</button>
                           </div>
                           <div class="col-sm">
                           </div>
                           <div class="col-sm">
-                            <button class="btn btn-light m-3 btn-block" type="button" onclick="window.location.href='/users/list'">Users</button>
+                            <button class="button" type="button" onclick="window.location.href='/users/list'">Users</button>
                           </div>
                         </div>
                     </div>
