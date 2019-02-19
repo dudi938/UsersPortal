@@ -16,7 +16,7 @@ const config = {
 
 exports.getAllUsers = async function getAllUsers(){
 	try {
-		await sql.connect('mssql://ofakim:Qaz123456789@DUDI-PC/OfakimDB')
+		await sql.connect('mssql://ofakim:Qaz123456789@localhost/OfakimDB')
 		const result = await sql.query`select * from Users`
         console.dir(result)
         sql.close()
@@ -29,7 +29,7 @@ exports.getAllUsers = async function getAllUsers(){
 
 exports.addUsers = async function addUsers(User){
 	try {
-		await sql.connect('mssql://ofakim:Qaz123456789@DUDI-PC/OfakimDB')
+		await sql.connect('mssql://ofakim:Qaz123456789@localhost/OfakimDB')
 		const result = await sql.query`INSERT INTO Users(FullName, Birthday, Email, Phone) VALUES(${User.fullName}, ${User.birthday}, ${User.email}, ${User.phone});`
         //console.dir(result)
         sql.close()
