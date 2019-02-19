@@ -4,6 +4,9 @@ var path = require('path')
 var bodyParser = require('body-parser');
 var sql = require('../data/sql')
 
+
+var db_type = require('../app').dbType
+
 // create application/json parser
 var jsonParser = bodyParser.json()
 
@@ -13,6 +16,10 @@ const homeBaseUrl = path.join(__dirname, '../views/')
 
 /* GET create page. */
 router.get('/create', function(req, res, next) {
+
+  console.log(db_type + ': db_type')
+
+
   console.log('GET: ' + req.originalUrl)
   var url = usersBaseUrl + '/Create.html'
   console.log('Send file ' + url)
@@ -53,5 +60,6 @@ router.get('/list/get', function(req, res, next) {
     res.send(users)
   })
 });
+
 
 module.exports = router;
