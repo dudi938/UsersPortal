@@ -6,6 +6,7 @@ function ajaxPost(data, url, callback){
         success: function (results) {
             res = results
             console.log(res)
+            alert(JSON.stringify(res))
             callback()
         },
         data: data

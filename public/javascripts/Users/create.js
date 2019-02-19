@@ -8,7 +8,7 @@ function bindClickEvents(){
          var phone = $( "#phone" ).val()
          var birthday = $( "#birthday" ).val()
          var email = $( "#email" ).val()
-         //var user = '{"FullName":"fullName","Birthday":"birthday","Email":"email", "Phone":"phone"}'
+
          var user = {"FullName":fullName,"Birthday":birthday,"Email":email, "Phone":phone}
          saveUser(JSON.stringify(user), function(){
             window.location.href='list'

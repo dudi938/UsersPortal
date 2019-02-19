@@ -1,11 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path')
-//var app = require('../app')
 var bodyParser = require('body-parser');
 var sql = require('../data/sql')
-
-//var app = express()
 
 // create application/json parser
 var jsonParser = bodyParser.json()
@@ -31,7 +28,12 @@ router.post('/create', jsonParser, function(req, res, next) {
    //var url = usersBaseUrl + '/List.html'
    var url = '/Users/list.html'
    console.log('Send file ' + url)
-   res.send('OK')
+
+   if(users){
+    res.send('OK')
+   }else{
+    res.send('ERROR')
+   }
   })
 });
 
@@ -43,7 +45,6 @@ router.get('/list', function(req, res, next) {
     res.sendFile(url)
   })
 });
-
 
 
 /* GET list page. */

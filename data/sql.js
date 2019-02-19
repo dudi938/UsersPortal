@@ -31,7 +31,7 @@ exports.addUsers = async function addUsers(User){
 	try {
 		await sql.connect('mssql://ofakim:Qaz123456789@localhost/OfakimDB')
 		const result = await sql.query`INSERT INTO Users(FullName, Birthday, Email, Phone) VALUES(${User.fullName}, ${User.birthday}, ${User.email}, ${User.phone});`
-        //console.dir(result)
+
         sql.close()
         return result
 	} catch (err) {
@@ -39,9 +39,3 @@ exports.addUsers = async function addUsers(User){
         sql.close()
 	}
 }
-
-
- //addUsers({"fullName":"ss", "birthday":"sdsd", "email":"sdsdc", "phone":"sdcsd"}).then((res) => {
-//     getAllUsers().then((res) => {
- //    })
- //})

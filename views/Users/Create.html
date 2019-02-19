@@ -4,9 +4,13 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script type="text/javascript" src="../../javascripts/Users/create.js"></script>
         <script type="text/javascript" src="../../javascripts/rest_api/rest.js"></script>
+        <link rel="stylesheet" href="../stylesheets/style.css">
     </head>
     <body>
-        <div class="container-fluid bg-dark text-white mt-3 p-3">
+        <div class="container-fluid bg-info text-white mt-3 p-3 text-center">
+                <p class="h1 text-center font-weight-light">Create User</p>
+        </div>
+        <div class="container-fluid bg-secondary text-white mt-3 p-3">
             <form class="createUserForm" action="/users/create" method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -24,7 +28,7 @@
                     <label for="Phone">Phone</label>
                     <input type="tel" name="Phone" class="form-control" id="phone" placeholder="050-111-1111" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required value="054-215-1661">
                 </div> 
-                <button type="button" class="submit btn btn-primary">Save</button>
+                <button type="button" class="submit button btn btn-primary">Save</button>
             </form>          
         </div>      
     </body>
